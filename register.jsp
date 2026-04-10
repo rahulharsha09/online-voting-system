@@ -1,0 +1,93 @@
+<html><html>
+<head>
+    <title>Register</title>
+    <link href="css/register.css" rel="stylesheet">
+    <!-- ✅ Font Awesome for eye icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form action="RegisterServlet" method="post">
+
+    Name: <input type="text" name="name"><br><br>
+
+    Email: <input type="email" name="email"><br><br>
+
+    <!-- ✅ Password field with eye icon -->
+    Password:<br>
+    <div class="password-wrapper">
+        <input type="password" id="password" name="password" placeholder="Enter Password">
+        <span class="eye-icon" onclick="togglePassword()">
+            <i class="fa fa-eye" id="eyeIcon" style="color: red;"></i>
+    </span>
+    </div><br><br>
+
+    Father Name: <input type="text" name="Father_name"><br><br>
+
+    DOB: <input type="date" name="dob"><br><br>
+
+    Gender: <input type="text" name="gender"><br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+<!-- ✅ Toggle script -->
+<script>
+    function togglePassword() {
+        const input = document.getElementById("password");
+        const icon  = document.getElementById("eyeIcon");
+
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            input.type = "password";
+            icon.classList.replace("fa-eye-slash", "fa-eye");
+        }
+    }
+</script>
+
+</body>
+</html>
+<%--<%@ page language="java" contentType="text/html; charset=UTF-8" %>--%>
+<%--<!DOCTYPE html>--%>
+<%--<html>--%>
+<%--<head>--%>
+<%--  <title>Register</title>--%>
+
+<%--</head>--%>
+
+<%--<body>--%>
+
+<%--<div class="container">--%>
+<%--  <h2>Registration Form</h2>--%>
+
+<%--  <form action="RegisterServlet" method="post">--%>
+
+<%--    <input type="text" name="name" placeholder="Enter Name" required>--%>
+
+<%--    <input type="email" name="email" placeholder="Enter Email" required>--%>
+
+<%--    <input type="password" name="password" placeholder="Enter Password" required>--%>
+
+<%--    <input type="text" name="Father_name" placeholder="Father Name" required>--%>
+
+<%--    <label>DOB:</label><br>--%>
+<%--    <input type="date" name="dob" required>--%>
+
+<%--    <input type="text" name="gender" placeholder="Gender" required>--%>
+
+<%--    <br><br>--%>
+<%--    <button type="submit" value="RegisterServlet">Register</button>--%>
+
+<%--  </form>--%>
+<%--</div>--%>
+
+<%--</body>--%>
+<%--</html>--%>

@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify OTP</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 350px;
+      margin: auto;
+      box-shadow: 0px 0px 10px gray;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid gray;
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #43e97b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #28a745;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Enter OTP</h2>
+
+  <form action="VerifyServlet" method="post">
+    <input type="text" name="otp" placeholder="Enter 6-digit OTP" required maxlength="6">
+    <br>
+    <button type="submit">Verify</button>
+  </form>
+
+</div>
+
+</body>
+</html>

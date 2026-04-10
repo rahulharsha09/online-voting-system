@@ -1,0 +1,40 @@
+<%@ page session="true" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Candidate</title>
+  <link rel="stylesheet" href="css/candidate.css">
+</head>
+<body>
+
+<%
+  Integer voterId = (Integer) session.getAttribute("voter_id");
+
+  // If session not found → redirect to login
+  if (voterId == null) {
+    response.sendRedirect("login.jsp");
+    return;
+  }
+%>
+
+<form action="CandidateServlet" method="post">
+  <fieldset>
+    <h2>Select Candidate</h2>
+    <br>
+
+    <!-- Hidden voter_id (user cannot edit) -->
+    <input type="hidden" name="voter_id" value="<%= voterId %>">
+
+    <!-- Party Selection -->
+    <input type="radio" name="party" value="TRS" required> TRS <br><br>
+    <input type="radio" name="party" value="TDP"> TDP <br><br>
+    <input type="radio" name="party" value="YSRCP"> YSRCP <br><br>
+    <input type="radio" name="party" value="BSP"> BSP <br><br>
+
+    <input type="submit" value="Submit Vote">
+  </fieldset>
+</form>
+
+</body>
+</html>
